@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Curriculum Generator</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+    margin:0;
+    padding:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    width:85%;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0px 0px 10px rgba(0,0,0,0.2);
+}
+
+h1{
+    text-align:center;
+}
+
+select{
+    width:100%;
+    padding:12px;
+    margin-top:20px;
+    font-size:18px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    background:blue;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:darkblue;
+}
+
+.topic-box{
+    margin-top:20px;
+    padding:20px;
+    background:#f9f9f9;
+    border-radius:10px;
+}
+
+p{
+    line-height:1.7;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>AI Curriculum Generator</h1>
+
+<select id="topic">
+
+<option value="">Select Course</option>
+
+<option value="java">Java</option>
+
+<option value="python">Python</option>
+
+<option value="c">C Language</option>
+
+<option value="c++">C++</option>
+
+<option value="html">HTML</option>
+
+<option value="css">CSS</option>
+
+<option value="javascript">JavaScript</option>
+
+<option value="ai/ml">AI / ML</option>
+
+</select>
+
+<button onclick="generateCurriculum()">
+Generate
+</button>
+
+<div id="result"></div>
+
+</div>
+
+
+
+<script>
+
+function generateCurriculum(){
+
+    let topic = document.getElementById("topic").value;
+
+    if(topic === ""){
+
+        document.getElementById("result").innerHTML = `
+        <div class="topic-box">
+
+        <h2>Please Select a Course</h2>
+
+        </div>
+        `;
+
+        return;
+    }
+
+    let curriculum = `
+
+    <div class="topic-box">
+
+    <h2>
+    Curriculum for ${topic.toUpperCase()}
+    </h2>
+
+    <button onclick="showModule('intro')">
+    Module 1: Introduction
+    </button>
+
+    <button onclick="showModule('basic')">
+    Module 2: Basics
+    </button>
+
+    <button onclick="showModule('intermediate')">
+    Module 3: Intermediate
+    </button>
+
+    <button onclick="showModule('advanced')">
+    Module 4: Advanced
+    </button>
+
+    <button onclick="showModule('projects')">
+    Module 5: Projects
+    </button>
+
+    <div id="moduleContent"></div>
+
+    </div>
+    `;
+
+    document.getElementById("result").innerHTML = curriculum;
+}
+
+
+
+
+function showModule(module){
+
+let topic = document.getElementById("topic").value;
+
+let content = "";
+
+
+
+/* ================= JAVA ================= */
+
+if(topic === "java"){
+
+    if(module === "intro"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>Java Introduction</h2>
+
+        <h3>What is Java?</h3>
+        <p>
+        Java is an object-oriented programming language
+        used for web, mobile, and enterprise applications.
+        </p>
+
+        <h3>Features of Java</h3>
+        <p>
+        Java is secure, portable,
+        robust, and platform independent.
+        </p>
+
+        </div>
+        `;
+    }
+
+    else if(module === "basic"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>Java Basics</h2>
+
+        <h3>Variables</h3>
+        <p>
+        Variables store values in Java.
+        </p>
+
+        <h3>Data Types</h3>
+        <p>
+        int, float, char, boolean.
+        </p>
+
+        </div>
+        `;
+    }
+
+    else if(module === "intermediate"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>Java Intermediate</h2>
+
+        <h3>Arrays</h3>
+
+        <h3>Strings</h3>
+
+        <h3>OOP Concepts</h3>
+
+        </div>
+        `;
+    }
+
+    else if(module === "advanced"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>Java Advanced</h2>
+
+        <h3>Collections</h3>
+
+        <h3>JDBC</h3>
+
+        <h3>Multithreading</h3>
+
+        </div>
+        `;
+    }
+
+    else if(module === "projects"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>Java Projects</h2>
+
+        <h3>Banking System</h3>
+
+        <h3>Student Management System</h3>
+
+        </div>
+        `;
+    }
+
+}
+
+
+
+
+
+/* ================= PYTHON ================= */
+
+else if(topic === "python"){
+
+    if(module === "intro"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>Python Introduction</h2>
+
+        <h3>What is Python?</h3>
+        <p>
+        Python is an easy-to-learn language
+        used in AI, ML, and automation.
+        </p>
+
+        </div>
+        `;
+    }
+
+    else if(module === "basic"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>Python Basics</h2>
+
+        <h3>Variables</h3>
+
+        <h3>Data Types</h3>
+
+        <h3>Conditions</h3>
+
+        </div>
+        `;
+    }
+
+    else if(module === "intermediate"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>Python Intermediate</h2>
+
+        <h3>Functions</h3>
+
+        <h3>Lists</h3>
+
+        <h3>Dictionaries</h3>
+
+        </div>
+        `;
+    }
+
+    else if(module === "advanced"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>Python Advanced</h2>
+
+        <h3>File Handling</h3>
+
+        <h3>Exception Handling</h3>
+
+        </div>
+        `;
+    }
+
+    else if(module === "projects"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>Python Projects</h2>
+
+        <h3>AI Chatbot</h3>
+
+        <h3>Weather App</h3>
+
+        </div>
+        `;
+    }
+
+}
+
+
+
+
+
+/* ================= C LANGUAGE ================= */
+
+else if(topic === "c"){
+
+    if(module === "intro"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>C Introduction</h2>
+
+        <p>
+        C is a procedural programming language
+        used for system programming.
+        </p>
+
+        </div>
+        `;
+    }
+
+    else if(module === "basic"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>C Basics</h2>
+
+        <h3>Variables</h3>
+
+        <h3>Loops</h3>
+
+        </div>
+        `;
+    }
+
+    else if(module === "intermediate"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>C Intermediate</h2>
+
+        <h3>Functions</h3>
+
+        <h3>Pointers</h3>
+
+        </div>
+        `;
+    }
+
+    else if(module === "advanced"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>C Advanced</h2>
+
+        <h3>Dynamic Memory Allocation</h3>
+
+        </div>
+        `;
+    }
+
+    else if(module === "projects"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>C Projects</h2>
+
+        <h3>Banking System</h3>
+
+        </div>
+        `;
+    }
+
+}
+
+
+
+
+
+/* ================= C++ ================= */
+
+else if(topic === "c++"){
+
+    if(module === "intro"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>C++ Introduction</h2>
+
+        <p>
+        C++ is an object-oriented extension of C language.
+        </p>
+
+        </div>
+        `;
+    }
+
+    else if(module === "basic"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>C++ Basics</h2>
+
+        <h3>Variables</h3>
+
+        <h3>Loops</h3>
+
+        </div>
+        `;
+    }
+
+    else if(module === "intermediate"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>C++ Intermediate</h2>
+
+        <h3>Classes and Objects</h3>
+
+        <h3>Inheritance</h3>
+
+        </div>
+        `;
+    }
+
+    else if(module === "advanced"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>C++ Advanced</h2>
+
+        <h3>STL</h3>
+
+        <h3>Templates</h3>
+
+        </div>
+        `;
+    }
+
+    else if(module === "projects"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>C++ Projects</h2>
+
+        <h3>Library Management System</h3>
+
+        </div>
+        `;
+    }
+
+}
+
+
+
+
+
+/* ================= HTML ================= */
+
+else if(topic === "html"){
+
+    if(module === "intro"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>HTML Introduction</h2>
+
+        <p>
+        HTML is used to create webpages.
+        </p>
+
+        </div>
+        `;
+    }
+
+    else if(module === "basic"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>HTML Basics</h2>
+
+        <h3>Headings</h3>
+
+        <h3>Paragraphs</h3>
+
+        <h3>Images</h3>
+
+        </div>
+        `;
+    }
+
+    else if(module === "intermediate"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>HTML Intermediate</h2>
+
+        <h3>Forms</h3>
+
+        <h3>Tables</h3>
+
+        </div>
+        `;
+    }
+
+    else if(module === "advanced"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>HTML Advanced</h2>
+
+        <h3>Semantic Tags</h3>
+
+        </div>
+        `;
+    }
+
+    else if(module === "projects"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>HTML Projects</h2>
+
+        <h3>Portfolio Website</h3>
+
+        </div>
+        `;
+    }
+
+}
+
+
+
+
+
+/* ================= CSS ================= */
+
+else if(topic === "css"){
+
+    if(module === "intro"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>CSS Introduction</h2>
+
+        <p>
+        CSS is used to style webpages.
+        </p>
+
+        </div>
+        `;
+    }
+
+    else if(module === "basic"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>CSS Basics</h2>
+
+        <h3>Colors</h3>
+
+        <h3>Backgrounds</h3>
+
+        </div>
+        `;
+    }
+
+    else if(module === "intermediate"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>CSS Intermediate</h2>
+
+        <h3>Flexbox</h3>
+
+        <h3>Grid</h3>
+
+        </div>
+        `;
+    }
+
+    else if(module === "advanced"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>CSS Advanced</h2>
+
+        <h3>Animations</h3>
+
+        </div>
+        `;
+    }
+
+    else if(module === "projects"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>CSS Projects</h2>
+
+        <h3>Responsive Website</h3>
+
+        </div>
+        `;
+    }
+
+}
+
+
+
+
+
+/* ================= JAVASCRIPT ================= */
+
+else if(topic === "javascript"){
+
+    if(module === "intro"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>JavaScript Introduction</h2>
+
+        <p>
+        JavaScript creates interactive websites.
+        </p>
+
+        </div>
+        `;
+    }
+
+    else if(module === "basic"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>JavaScript Basics</h2>
+
+        <h3>Variables</h3>
+
+        <h3>Functions</h3>
+
+        </div>
+        `;
+    }
+
+    else if(module === "intermediate"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>JavaScript Intermediate</h2>
+
+        <h3>Arrays</h3>
+
+        <h3>Objects</h3>
+
+        </div>
+        `;
+    }
+
+    else if(module === "advanced"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>JavaScript Advanced</h2>
+
+        <h3>APIs</h3>
+
+        <h3>Async Await</h3>
+
+        </div>
+        `;
+    }
+
+    else if(module === "projects"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>JavaScript Projects</h2>
+
+        <h3>Todo App</h3>
+
+        </div>
+        `;
+    }
+
+}
+
+
+
+
+
+/* ================= AI / ML ================= */
+
+else if(topic === "ai/ml"){
+
+    if(module === "intro"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>AI/ML Introduction</h2>
+
+        <p>
+        AI enables machines to think like humans.
+        ML allows machines to learn from data.
+        </p>
+
+        </div>
+        `;
+    }
+
+    else if(module === "basic"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>AI/ML Basics</h2>
+
+        <h3>Python for AI</h3>
+
+        <h3>NumPy</h3>
+
+        <h3>Pandas</h3>
+
+        </div>
+        `;
+    }
+
+    else if(module === "intermediate"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>AI/ML Intermediate</h2>
+
+        <h3>Supervised Learning</h3>
+
+        <h3>Regression</h3>
+
+        </div>
+        `;
+    }
+
+    else if(module === "advanced"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>AI/ML Advanced</h2>
+
+        <h3>Deep Learning</h3>
+
+        <h3>TensorFlow</h3>
+
+        </div>
+        `;
+    }
+
+    else if(module === "projects"){
+
+        content = `
+        <div class="topic-box">
+
+        <h2>AI/ML Projects</h2>
+
+        <h3>Face Recognition</h3>
+
+        <h3>Chatbot</h3>
+
+        </div>
+        `;
+    }
+
+}
+
+
+
+document.getElementById("moduleContent").innerHTML = content;
+
+}
+
+</script>
+
+</body>
+</html>
